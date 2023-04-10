@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  display: inline-block;
+}
+
+.container {
+  background: hsl(212, 45%, 89%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .wrap {
+  margin: calc(5.25rem + 1px) 0;
+  padding: 0 1.5rem;
+}
+.container .wrap .card {
+  background: hsl(0, 0%, 100%);
+  max-width: 20rem;
+  padding: 1rem 1rem 2.5rem;
+  border-radius: calc(1.25rem - 1px);
+  box-shadow: 0px 20px 20px 5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.container .wrap .card__header {
+  border-radius: calc(0.5rem + 2px);
+  overflow: hidden;
+}
+.container .wrap .card__body {
+  color: hsl(218, 44%, 22%);
+  margin: 1.5rem 0 0;
+  text-align: center;
+}
+.container .wrap .card__body h1 {
+  margin: 0;
+  padding: 0 0.5rem;
+  font-size: calc(1.25rem + 2px);
+  font-weight: 700;
+  letter-spacing: 0.002em;
+}
+.container .wrap .card__body p {
+  color: hsl(220, 15%, 55%);
+  margin: 1rem 0 0;
+  padding: 0 0.5rem;
+  font-size: calc(1rem - 1px);
+  font-weight: 400;
+  line-height: calc(1.25rem - 1px);
+  letter-spacing: 0.012em;
+}/*# sourceMappingURL=main.css.map */

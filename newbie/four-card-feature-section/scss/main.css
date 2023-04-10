@@ -1,0 +1,208 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  display: inline-block;
+}
+
+.container {
+  background: hsl(0, 0%, 98%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.container .wrap {
+  width: 100%;
+  max-width: calc(73.5rem - 2px);
+  color: hsl(234, 12%, 34%);
+  margin: 5.25rem 0 clamp(5rem - 2px, 8vw, 5rem);
+  padding: 0 2rem;
+}
+.container .wrap .overview {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.container .wrap .overview h1 {
+  margin: 0 0 0 -2px;
+  font-weight: 200;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  letter-spacing: 0.006em;
+}
+.container .wrap .overview h2 {
+  margin: 2px 0 0 0;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  letter-spacing: 0.008em;
+}
+@media (min-width: 48rem) {
+  .container .wrap .overview h2 {
+    margin-top: -0.25rem;
+  }
+}
+.container .wrap .overview p {
+  color: hsl(229, 6%, 66%);
+  margin: 1rem 0 0 -1px;
+  max-width: 34rem;
+  font-size: calc(1rem - 1px);
+  line-height: calc(1.5rem + 1px);
+  letter-spacing: 0.006em;
+  text-align: center;
+}
+@media (min-width: 48rem) {
+  .container .wrap .overview p {
+    margin: 1rem 0 0 0;
+    letter-spacing: 0.005em;
+  }
+}
+.container .wrap .features {
+  margin-top: calc(4.75rem - 1px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
+  gap: clamp(1.5rem, 5vw, 1.75rem + 2px);
+}
+.container .wrap .features .card {
+  background: hsl(0, 0%, 100%);
+  padding: clamp(22px, 5vw, 27px) clamp(1.5rem, 5vw, 2rem) clamp(1.5rem, 5vw, 2rem);
+  border-radius: 6px;
+  box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.5rem - 1px);
+  overflow: hidden;
+}
+.container .wrap .features .card__text {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: clamp(3px, 5vw, 8px);
+}
+.container .wrap .features .card__text h3 {
+  margin: 0 0 0 0.25rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.005em;
+}
+@media (min-width: 48rem) {
+  .container .wrap .features .card__text h3 {
+    margin: 0;
+  }
+}
+.container .wrap .features .card__text p {
+  color: hsl(229, 6%, 66%);
+  margin: 0 0 0 5px;
+  font-size: calc(0.75rem + 1px);
+  line-height: calc(1.5rem - 1px);
+  letter-spacing: 0.007em;
+}
+@media (min-width: 48rem) {
+  .container .wrap .features .card__text p {
+    margin-left: 0;
+    letter-spacing: 0.005em;
+  }
+}
+.container .wrap .features .card img {
+  justify-self: flex-end;
+  margin: 0.25rem;
+  width: clamp(3.5rem + 1px, 8vw, 4rem);
+}
+@media (min-width: 48rem) {
+  .container .wrap .features .card img {
+    margin: 0;
+  }
+}
+.container .wrap .features .card--one {
+  border-top: 0.25rem solid hsl(180, 62%, 55%);
+}
+@media (min-width: 1057px) {
+  .container .wrap .features .card--one {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    align-self: center;
+  }
+}
+.container .wrap .features .card--two {
+  padding: clamp(23px, 5vw, 27px) clamp(1.5rem, 5vw, 2rem) clamp(1.5rem - 1px, 5vw, 2rem);
+  border-top: 0.25rem solid hsl(0, 78%, 62%);
+}
+.container .wrap .features .card--two h3 {
+  letter-spacing: -0.008em;
+}
+.container .wrap .features .card--two p {
+  letter-spacing: 0.006em;
+}
+.container .wrap .features .card--three {
+  border-top: 0.25rem solid hsl(34, 97%, 64%);
+}
+.container .wrap .features .card--three h3 {
+  margin-left: 5px;
+}
+@media (min-width: 48rem) {
+  .container .wrap .features .card--three h3 {
+    margin: 0;
+  }
+}
+.container .wrap .features .card--three p {
+  letter-spacing: 0.004em;
+}
+@media (min-width: 1057px) {
+  .container .wrap .features .card--three {
+    grid-column: 2/3;
+  }
+}
+.container .wrap .features .card--four {
+  border-top: 0.25rem solid hsl(212, 86%, 64%);
+}
+.container .wrap .features .card--four p {
+  letter-spacing: 0.005em;
+}
+@media (min-width: 1057px) {
+  .container .wrap .features .card--four {
+    grid-row: 1/3;
+    grid-column: 3/4;
+    align-self: center;
+  }
+}
+@media (min-width: 48rem) {
+  .container .wrap .features {
+    margin-top: calc(4rem - 1px);
+  }
+}
+@media (min-width: 48rem) {
+  .container .wrap {
+    margin-top: calc(5rem - 2px);
+  }
+}
+@media (min-width: 91rem) {
+  .container .wrap {
+    margin: 0;
+  }
+}
+@media (min-width: 91rem) {
+  .container {
+    align-items: center;
+  }
+}/*# sourceMappingURL=main.css.map */

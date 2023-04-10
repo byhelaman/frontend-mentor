@@ -1,0 +1,211 @@
+@use './base/reset';
+@use './utilities/variables';
+
+.container {
+  background: url(../images/bg-pattern-top-mobile.svg) no-repeat left 0vw top 0vh/100%, url(../images/bg-pattern-bottom-mobile.svg) no-repeat right 0vw bottom 0vh/100%;
+  min-height: 100vh;
+
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+
+  .wrap {
+    width: 100%;
+    max-width: calc(72.5rem - 2px);
+
+    margin: clamp(calc(5.25rem - 2px), 10vw, calc(7.5rem - 2px)) 0 5.25rem;
+    padding: 0 1.5rem;
+
+    & .overview {
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      gap: 0.75rem;
+
+      &__text {
+        width: 100%;
+        max-width: 28.25rem;
+        text-align: center;
+
+        & h1 {
+          color: variables.$very-dark-magenta;
+          margin: 0;
+          font-weight: 700;
+          font-size: clamp(2.5rem, 7vw, 3.5rem);
+          line-height: clamp(2rem, 6vw, 3rem);
+          letter-spacing: -0.034em;
+
+          @media (min-width:33.75rem) {
+            letter-spacing: -0.037em;
+          }
+        }
+
+        & p {
+          color: variables.$dark-grayish-magenta;
+          margin: clamp(calc(1.5rem - 1px), 4vw, calc(1.5rem + 2px)) 0 0;
+          font-weight: 500;
+          font-size: calc(1.125rem + 1px);
+          line-height: calc(1.5rem + 1px);
+          letter-spacing: -0.034em;
+        }
+
+        @media (min-width:33.75rem) {
+          text-align: start;
+        }
+      }
+
+      &__ratings {
+        width: 100%;
+        max-width: 540px;
+
+        margin-top: 27px;
+
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+
+
+        & .rating {
+          width: 100%;
+          background: variables.$light-grayish-magenta;
+          max-width: calc(28rem - 3px);
+          padding: clamp(1rem, 4vw, 1.25rem) 2rem clamp(calc(1rem - 1px), 4vw, 1.25rem);
+
+          display: flex;
+          justify-content: center;
+          flex-flow: row wrap;
+          gap: clamp(calc(1rem - 1px), 4vw, 2rem);
+
+          border-radius: 0.5rem;
+
+          & .stars {
+            display: flex;
+            gap: 0.5rem;
+          }
+
+          & h2 {
+            color: variables.$very-dark-magenta;
+            margin: 0;
+            font-weight: 700;
+            font-size: calc(1rem + 1px)
+          }
+
+          &--one {
+            align-self: flex-start;
+
+            & h2 {
+              margin-left: calc(0.5rem + 2px);
+
+              @media (min-width:33.75rem) {
+                margin-left: 0;
+              }
+            }
+          }
+
+          &--two {
+            align-self: center;
+          }
+
+          &--three {
+            align-self: flex-end;
+          }
+
+          @media (min-width:33.75rem) {
+            justify-content: flex-start;
+          }
+        }
+      }
+
+      @media (min-width:90rem) {
+        justify-content: space-between;
+      }
+    }
+
+    & .customers {
+      min-height: calc(16.75rem - 2px);
+      margin-top: clamp(calc(3rem + 1px), 5vw, calc(4.5rem - 1px));
+
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      gap: 1rem;
+
+      & .review {
+        background: variables.$very-dark-magenta;
+        color: variables.$white;
+        padding: 2.5rem 2rem clamp(calc(2rem - 1px), 5vw, calc(2.5rem - 1px));
+        max-width: calc(21.75rem + 2px);
+        border-radius: 0.5rem;
+
+        & p {
+          margin: calc(1.5rem + 3px) 0 0;
+          font-weight: 500;
+          font-size: calc(1rem + 1px);
+          line-height: calc(1.5rem - 2px);
+
+          letter-spacing: -0.018em;
+        }
+
+        &__profile {
+          display: flex;
+          gap: calc(1.5rem - 1px);
+
+          & img {
+            max-width: 2.5rem;
+            border-radius: 100vw;
+          }
+
+          & .data {
+            margin-top: calc(.25rem - 1px);
+            display: flex;
+            flex-flow: column nowrap;
+            gap: .25rem;
+
+            & h3 {
+              margin: 0;
+              font-weight: 700;
+              font-size: calc(1rem + 1px);
+              opacity: 0.8;
+            }
+
+            & span {
+              color: variables.$soft-pink;
+              font-weight: 500;
+              font-size: calc(1rem + 1px);
+              letter-spacing: -0.005em;
+              opacity: 0.8;
+            }
+          }
+        }
+
+        &--one {
+          align-self: flex-start;
+        }
+
+        &--two {
+          align-self: center;
+        }
+
+        &--three {
+          align-self: flex-end;
+        }
+      }
+
+      @media (min-width:90rem) {
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width:91rem) {
+      margin: 0;
+    }
+  }
+
+  @media (min-width:30rem) {
+    background: url(../images/bg-pattern-top-desktop.svg) no-repeat left 0vw top 0vh, url(../images/bg-pattern-bottom-desktop.svg) no-repeat right 0vw bottom 0vh;
+  }
+
+  @media (min-width:91rem) {
+    align-items: center;
+  }
+}

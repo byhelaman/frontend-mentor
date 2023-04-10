@@ -1,0 +1,198 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  display: inline-block;
+}
+
+.container {
+  background: hsl(217, 54%, 11%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .wrap {
+  margin: calc(4rem - 2px) 0;
+  padding: 0 1.5rem;
+}
+.container .wrap .card {
+  background: hsl(216, 50%, 16%);
+  color: hsl(0, 0%, 100%);
+  max-width: calc(22rem - 2px);
+  padding: 1.5rem 1.5rem clamp(1.5rem, 3vw, 2rem);
+  border-radius: 0.875rem;
+  box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.1), 0px 24px 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.container .wrap .card__header {
+  border-radius: calc(0.5rem + 2px);
+  overflow: hidden;
+}
+.container .wrap .card__header a {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.container .wrap .card__header a::after {
+  transition: 0.3s;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: url(../images/icon-view.svg) no-repeat center, rgba(0, 255, 247, 0.5);
+  opacity: 0;
+}
+.container .wrap .card__header a:hover::after {
+  opacity: 1;
+}
+.container .wrap .card__body {
+  margin-top: clamp(1.5rem - 1px, 2vw, 1.5rem);
+  border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+.container .wrap .card__body--summary h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: calc(1.25rem + 2px);
+  display: inline-block;
+  transition: 0.3s;
+}
+.container .wrap .card__body--summary h1:hover {
+  transition: 0.3s;
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
+}
+.container .wrap .card__body--summary p {
+  color: hsl(215, 51%, 70%);
+  margin: clamp(0.75rem, 2vw, 1rem) 0 0;
+  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1rem + 2px);
+  letter-spacing: 0.002em;
+  line-height: calc(1.5rem + 2px);
+}
+.container .wrap .card__body--stats {
+  margin: clamp(1rem - 1px, 2vw, 1.5rem) 0 clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.container .wrap .card__body--stats .price,
+.container .wrap .card__body--stats .time {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+.container .wrap .card__body--stats .price img,
+.container .wrap .card__body--stats .time img {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--stats .price,
+  .container .wrap .card__body--stats .time {
+    letter-spacing: 0;
+  }
+}
+.container .wrap .card__body--stats .price {
+  color: hsl(178, 100%, 50%);
+  gap: 6px;
+}
+.container .wrap .card__body--stats .price img {
+  margin-top: 2px;
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--stats .price img {
+    margin-top: 0;
+  }
+}
+.container .wrap .card__body--stats .price span {
+  font-weight: 600;
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--stats .price {
+    gap: 7px;
+  }
+}
+.container .wrap .card__body--stats .time {
+  color: hsl(215, 51%, 70%);
+  margin-right: 2px;
+  gap: 7px;
+  letter-spacing: -0.025em;
+}
+.container .wrap .card__body--stats .time span {
+  font-weight: 400;
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--stats .time {
+    letter-spacing: 0;
+  }
+}
+.container .wrap .card__footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+.container .wrap .card__footer img {
+  max-width: calc(2rem + 1px);
+  border-radius: 100vw;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+.container .wrap .card__footer p {
+  color: hsl(215, 51%, 70%);
+  margin: -2px 0 0;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.container .wrap .card__footer p a {
+  margin-left: 3px;
+  color: hsl(0, 0%, 100%);
+  transition: 0.3s;
+}
+.container .wrap .card__footer p a:hover {
+  transition: 0.3s;
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__footer p a {
+    margin-left: 5px;
+    letter-spacing: 0.005em;
+  }
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__footer p {
+    letter-spacing: 0;
+  }
+}/*# sourceMappingURL=main.css.map */

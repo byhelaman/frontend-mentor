@@ -1,0 +1,174 @@
+@use './base/reset';
+@use './utilities/variables';
+
+.container {
+  background: variables.$very-dark-blue;
+  min-height: 100vh;
+  padding: 0 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .wrap {
+    width: 100%;
+    max-width: calc(69rem + 6px);
+    margin: 5.5rem 0;
+
+    & .card {
+      background: variables.$dark-desaturated-blue;
+      color: variables.$white;
+
+      border-radius: 0.5rem;
+      overflow: hidden;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(17rem, calc(35.75rem - 2px)));
+
+      &__header {
+        position: relative;
+
+        & img {
+          mix-blend-mode: multiply;
+          opacity: 0.75;
+
+          @media (min-width: 38.5rem) {
+            display: none;
+          }
+        }
+
+        &::before {
+          content: '';
+          background: variables.$soft-violet;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+
+        &::after {
+          display: none;
+
+          content: '';
+          background: url(../images/image-header-desktop.jpg) no-repeat left top/cover;
+          mix-blend-mode: multiply;
+          opacity: 0.75;
+
+          width: 100%;
+          height: 100%;
+
+          position: absolute;
+
+          @media (min-width: 38.5rem) {
+            display: block;
+          }
+        }
+
+        @media (min-width: 38.5rem) {
+          grid-column: 2/3;
+          grid-row: 1;
+        }
+      }
+
+
+      &__body {
+        text-align: center;
+        padding: clamp(2rem, 6vw, calc(4rem - 1px)) clamp(2rem, 8vw, 7.5rem) clamp(2rem, 6vw, calc(3.75rem - 1px)) clamp(2rem, 6vw, calc(4.5rem - 1px));
+
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2.5rem, 5vw, 4.5rem);
+
+        grid-column: 1/2;
+
+        @media (min-width: 38.5rem) {
+          text-align: start;
+        }
+
+        & .overview {
+          margin: 0.5rem 0 0;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: clamp(1rem, 4vw, calc(1.5rem + 1px));
+
+          & h1 {
+            margin: 0;
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            line-height: clamp(2rem, 5vw, 2.75rem);
+
+            & span {
+              color: variables.$soft-violet;
+            }
+
+            @media (min-width: 38.5rem) {
+              margin-left: 1px;
+            }
+          }
+
+          & p {
+            margin: 0;
+            color: variables.$slightly-transparent-white;
+
+            font-size: calc(1rem - 1px);
+            line-height: calc(1.5rem + 1px);
+            letter-spacing: 0.002em;
+          }
+
+          @media (min-height: 38.5rem) {
+            align-items: start;
+          }
+        }
+
+        & .stats {
+          margin-bottom: calc(.25rem + 1px);
+
+          & ul {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            gap: clamp(calc(1.75rem + 1px), 5vw, 3.75rem);
+
+
+            & li {
+              font-size: 1.5rem;
+              font-weight: 700;
+
+              display: flex;
+              flex-direction: column;
+              gap: calc(.25rem + 2px);
+
+              & span {
+                color: variables.$slightly-transparent;
+                font-family: 'Lexend Deca', sans-serif;
+                font-size: calc(.75rem + 1px);
+                font-weight: 400;
+                text-transform: uppercase;
+
+                letter-spacing: 0.018em;
+              }
+
+              @media (min-width: 38.5rem) {
+                &:nth-child(1) {
+                  margin-right: calc(0.25rem + 1px);
+                }
+
+                &:nth-child(2) {
+                  margin-right: 0.125rem;
+                }
+              }
+            }
+
+            @media (min-width: 23.5rem) {
+              flex-flow: row wrap;
+            }
+
+            @media (min-width: 38.5rem) {
+              justify-content: start;
+            }
+          }
+        }
+      }
+    }
+  }
+}

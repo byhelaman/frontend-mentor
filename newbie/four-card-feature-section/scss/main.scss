@@ -1,0 +1,198 @@
+@use './base/reset';
+@use './utilities/variables';
+
+@mixin border($color) {
+  border-top: .25rem solid $color;
+}
+
+.container {
+  background: variables.$very-light-gray;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  & .wrap {
+    width: 100%;
+    max-width: calc(73.5rem - 2px);
+    color: variables.$very-dark-blue;
+    margin: 5.25rem 0 clamp(calc(5rem - 2px), 8vw, 5rem);
+    padding: 0 2rem;
+
+    & .overview {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      & h1 {
+        margin: 0 0 0 -2px;
+        font-weight: 200;
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        letter-spacing: 0.006em;
+      }
+
+      & h2 {
+        margin: 2px 0 0 0;
+        font-weight: 600;
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        letter-spacing: 0.008em;
+
+        @media (min-width: 48rem) {
+          margin-top: -.25rem;
+        }
+      }
+
+      & p {
+        color: variables.$grayish-blue;
+        margin: 1rem 0 0 -1px;
+        max-width: 34rem;
+        font-size: calc(1rem - 1px);
+        line-height: calc(1.5rem + 1px);
+        letter-spacing: 0.006em;
+
+        text-align: center;
+
+        @media (min-width: 48rem) {
+          margin: 1rem 0 0 0;
+          letter-spacing: 0.005em;
+        }
+      }
+    }
+
+    & .features {
+      margin-top: calc(4.75rem - 1px);
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
+      gap: clamp(1.5rem, 5vw, calc(1.75rem + 2px));
+
+      & .card {
+        background: variables.$white;
+        padding: clamp(22px, 5vw, 27px) clamp(1.5rem, 5vw, 2rem) clamp(1.5rem, 5vw, 2rem);
+
+        border-radius: 6px;
+        box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+
+        display: grid;
+        gap: clamp(1.75rem, 4vw, calc(2.5rem - 1px));
+
+        overflow: hidden;
+
+        &__text {
+          display: flex;
+          flex-flow: column nowrap;
+          gap: clamp(3px, 5vw, 8px);
+
+          & h3 {
+            margin: 0 0 0 .25rem;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: -0.005em;
+
+            @media (min-width: 48rem) {
+              margin: 0;
+            }
+          }
+
+          & p {
+            color: variables.$grayish-blue;
+            margin: 0 0 0 5px;
+            font-size: calc(0.75rem + 1px);
+            line-height: calc(1.5rem - 1px);
+
+            letter-spacing: 0.007em;
+
+            @media (min-width: 48rem) {
+              margin-left: 0;
+              letter-spacing: 0.005em;
+            }
+          }
+        }
+
+        & img {
+          justify-self: flex-end;
+          margin: 0.25rem;
+          width: clamp(calc(3.5rem + 1px), 8vw, 4rem);
+
+          @media (min-width: 48rem) {
+            margin: 0;
+          }
+        }
+
+        &--one {
+          @include border(variables.$cyan);
+
+          @media (min-width: 1057px) {
+            grid-row: 1/3;
+            grid-column: 1/2;
+            align-self: center;
+          }
+        }
+
+        &--two {
+          padding: clamp(23px, 5vw, 27px) clamp(1.5rem, 5vw, 2rem) clamp(calc(1.5rem - 1px), 5vw, 2rem);
+
+          & h3 {
+            letter-spacing: -0.008em;
+          }
+
+          & p {
+            letter-spacing: 0.006em;
+          }
+
+          @include border(variables.$red);
+        }
+
+        &--three {
+          & h3 {
+            margin-left: 5px;
+
+            @media (min-width: 48rem) {
+              margin: 0;
+            }
+          }
+
+          & p {
+            letter-spacing: 0.004em;
+          }
+
+          @include border(variables.$orange);
+
+          @media (min-width: 1057px) {
+            grid-column: 2/3;
+          }
+        }
+
+        &--four {
+          & p {
+            letter-spacing: 0.005em;
+          }
+
+          @include border(variables.$blue);
+
+          @media (min-width: 1057px) {
+            grid-row: 1/3;
+            grid-column: 3/4;
+            align-self: center;
+          }
+        }
+      }
+
+      @media (min-width: 48rem) {
+        margin-top: calc(4rem - 1px);
+      }
+    }
+
+    @media (min-width: 48rem) {
+      margin-top: calc(5rem - 2px);
+    }
+
+    @media (min-width: 91rem) {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 91rem) {
+    align-items: center;
+  }
+}

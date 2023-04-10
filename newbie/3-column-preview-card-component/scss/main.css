@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+img {
+  display: block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  background: #f2f2f2;
+  padding: 0 clamp(1.5rem, 6vw, 3rem);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.container .wrap {
+  width: 100%;
+  max-width: 57.5rem;
+  margin: clamp(5.5rem, 15vw, 10.75rem - 1px) 0 5.5rem;
+}
+.container .wrap .cards {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.container .wrap .cards .card {
+  padding: 3rem;
+}
+.container .wrap .cards .card__body {
+  color: hsl(0, 0%, 95%);
+  margin: calc(2rem + 3px) 0 clamp(1.5rem + 1px, 6vw, 5.25rem - 1px);
+}
+.container .wrap .cards .card__body h1,
+.container .wrap .cards .card__body h2 {
+  margin: 0;
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+.container .wrap .cards .card__body p {
+  color: hsla(0, 0%, 100%, 0.75);
+  margin: calc(1.5rem + 1px) 0 0;
+  font-size: calc(1rem - 1px);
+  line-height: calc(1.5rem + 1px);
+}
+.container .wrap .cards .card__button {
+  background: hsl(0, 0%, 95%);
+  width: calc(9rem + 2px);
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.75rem;
+  font-family: inherit;
+  font-size: calc(1rem - 1px);
+  letter-spacing: 0.005em;
+  border-radius: 100vw;
+  border: 0.125rem solid hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+}
+.container .wrap .cards .card__button:hover {
+  background: none;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+.container .wrap .cards .sedans {
+  background: hsl(31, 77%, 52%);
+}
+.container .wrap .cards .sedans button {
+  color: hsl(31, 77%, 52%);
+}
+.container .wrap .cards .suvs {
+  background: hsl(184, 100%, 22%);
+}
+.container .wrap .cards .suvs p {
+  letter-spacing: 0.005em;
+}
+.container .wrap .cards .suvs button {
+  color: hsl(184, 100%, 22%);
+}
+.container .wrap .cards .luxury {
+  background: hsl(179, 100%, 13%);
+  border-radius: 0 0 0.5rem 0;
+}
+.container .wrap .cards .luxury button {
+  color: hsl(179, 100%, 13%);
+}
+@media (min-width: calc(43.25rem - 1px)) {
+  .container .wrap .cards .luxury {
+    grid-column: 1/4;
+  }
+}
+@media (min-width: 63rem) {
+  .container .wrap .cards .luxury {
+    grid-column: 3/4;
+  }
+}
+@media (min-width: 91rem) {
+  .container .wrap {
+    margin: 0;
+  }
+}
+@media (min-width: 91rem) {
+  .container {
+    align-items: center;
+  }
+}/*# sourceMappingURL=main.css.map */

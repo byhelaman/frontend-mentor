@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  display: inline-block;
+}
+
+.container {
+  background: url(../images/pattern-background-mobile.svg) no-repeat top/100%, hsl(225, 100%, 94%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .wrap {
+  margin: 71px 0;
+  padding: 0 1.5rem;
+  max-width: calc(31rem + 2px);
+}
+.container .wrap .card {
+  background: hsl(0, 0%, 100%);
+  color: hsl(223, 47%, 23%);
+  border-radius: 1.125rem;
+  box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.15);
+  overflow: hidden;
+}
+.container .wrap .card__body {
+  text-align: center;
+  padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1.5rem, 5vw, 3rem);
+}
+.container .wrap .card__body--summary h1 {
+  margin: 0.5rem 0 0;
+  font-weight: 900;
+  font-size: clamp(22px, 5vw, 1.75rem);
+  letter-spacing: 0.0015em;
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--summary h1 {
+    margin-top: 5px;
+  }
+}
+.container .wrap .card__body--summary p {
+  color: hsl(224, 23%, 55%);
+  margin: 1rem 0 0;
+  padding: 0 0.75rem;
+  font-weight: 500;
+  font-size: clamp(1rem, 3vw, 1rem + 1px);
+  line-height: clamp(1.5rem + 1px, 3vw, 1.5rem + 2px);
+  letter-spacing: -0.024em;
+}
+.container .wrap .card__body--scheme {
+  background: hsl(225, 100%, 98%);
+  margin-top: 1.5rem;
+  padding: clamp(1rem + 1px, 4vw, 1.5rem) clamp(1rem, 4.2vw, 1.5rem) clamp(1rem, 4vw, 1.5rem);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.container .wrap .card__body--scheme img {
+  max-width: 3rem;
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--scheme img {
+    margin: 1px 0;
+  }
+}
+.container .wrap .card__body--scheme .price {
+  margin: 0 0.5rem 0 1.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: clamp(4px, 0.5vw, 6px);
+}
+.container .wrap .card__body--scheme .price h2 {
+  margin: 0;
+  font-weight: 900;
+}
+.container .wrap .card__body--scheme .price span {
+  color: hsl(224, 23%, 55%);
+  font-weight: 500;
+  letter-spacing: 0.015em;
+}
+.container .wrap .card__body--scheme .price h2,
+.container .wrap .card__body--scheme .price span {
+  font-size: clamp(14px, 3vw, 1rem);
+}
+.container .wrap .card__body--scheme a {
+  color: hsl(245, 75%, 52%);
+  margin-left: auto;
+  padding-top: 2px;
+  font-weight: 700;
+  font-size: clamp(0.75rem + 1px, 2vw, 0.75rem + 2px);
+  text-decoration: underline;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.container .wrap .card__body--scheme a:hover {
+  transition: 0.3s;
+  text-decoration: none;
+  opacity: 0.69;
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--scheme a {
+    padding-top: 0;
+  }
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--scheme {
+    margin-top: 1.25rem;
+  }
+}
+.container .wrap .card__body--payment {
+  margin: clamp(1.5rem, 5vw, 2rem) 0 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: clamp(1.5rem, 5vw, 2rem);
+}
+.container .wrap .card__body--payment button {
+  width: 100%;
+  padding: calc(1rem - 1px) 0;
+  background: hsl(245, 75%, 52%);
+  color: hsl(0, 0%, 100%);
+  font-family: "Red Hat Display";
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.002em;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 20px 20px rgba(56, 41, 224, 0.2);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.container .wrap .card__body--payment button:hover {
+  transition: 0.3s;
+  opacity: 0.69;
+}
+.container .wrap .card__body--payment a {
+  color: hsl(224, 23%, 55%);
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.002em;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.container .wrap .card__body--payment a:hover {
+  transition: 0.3s;
+  color: hsl(223, 47%, 23%);
+}
+@media (min-width: 48rem) {
+  .container .wrap .card__body--payment a {
+    margin-left: -1px;
+  }
+}
+@media (min-width: 48rem) {
+  .container {
+    background: url(../images/pattern-background-desktop.svg) no-repeat top/100%, hsl(225, 100%, 94%);
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,188 @@
+@use './base/reset';
+@use './utilities/variables';
+
+.container {
+  background: url(../images/pattern-background-mobile.svg) no-repeat top/100%, variables.$pale-blue;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .wrap {
+    margin: 71px 0;
+    padding: 0 1.5rem;
+    max-width: calc(31rem + 2px);
+
+    & .card {
+      background: variables.$white;
+      color: variables.$dark-blue;
+
+      border-radius: 1.125rem;
+      box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.15);
+      overflow: hidden;
+
+      &__body {
+        text-align: center;
+        padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1.5rem, 5vw, 3rem);
+
+        &--summary {
+          & h1 {
+            margin: 0.5rem 0 0;
+            font-weight: 900;
+            font-size: clamp(22px, 5vw, 1.75rem);
+            letter-spacing: 0.0015em;
+
+            @media (min-width: 48rem) {
+              margin-top: 5px;
+            }
+          }
+
+          & p {
+            color: variables.$desaturated-blue;
+            margin: 1rem 0 0;
+            padding: 0 0.75rem;
+
+            font-weight: 500;
+            font-size: clamp(1rem, 3vw, calc(1rem + 1px));
+            line-height: clamp(calc(1.5rem + 1px), 3vw, calc(1.5rem + 2px));
+            letter-spacing: -0.024em;
+          }
+        }
+
+        &--scheme {
+          background: variables.$very-pale-blue;
+          margin-top: 1.5rem;
+          padding: clamp(calc(1rem + 1px), 4vw, 1.5rem) clamp(1rem, 4.2vw, 1.5rem) clamp(1rem, 4vw, 1.5rem);
+          border-radius: 0.75rem;
+          overflow: hidden;
+
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          & img {
+            max-width: 3rem;
+
+            @media (min-width: 48rem) {
+              margin: 1px 0;
+            }
+          }
+
+          & .price {
+            margin: 0 0.5rem 0 1.25rem;
+
+            display: flex;
+            flex-flow: column nowrap;
+            gap: clamp(4px, .5vw, 6px);
+
+            & h2 {
+              margin: 0;
+              font-weight: 900;
+            }
+
+            & span {
+              color: variables.$desaturated-blue;
+              font-weight: 500;
+
+              letter-spacing: 0.015em;
+            }
+
+            & h2,
+            span {
+              font-size: clamp(14px, 3vw, 1rem);
+            }
+          }
+
+          & a {
+            color: variables.$bright-blue;
+            margin-left: auto;
+            padding-top: 2px;
+
+            font-weight: 700;
+            font-size: clamp(calc(.75rem + 1px), 2vw, calc(.75rem + 2px));
+            text-decoration: underline;
+
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+              transition: 0.3s;
+              text-decoration: none;
+              opacity: 0.69;
+            }
+
+            @media (min-width: 48rem) {
+              padding-top: 0;
+            }
+          }
+
+          @media (min-width: 48rem) {
+            margin-top: 1.25rem;
+          }
+        }
+
+        &--payment {
+          margin: clamp(1.5rem, 5vw, 2rem) 0 0.5rem;
+
+          display: flex;
+          align-items: center;
+          flex-flow: column nowrap;
+          gap: clamp(1.5rem, 5vw, 2rem);
+
+          & button {
+            width: 100%;
+            padding: calc(1rem - 1px) 0;
+
+            background: variables.$bright-blue;
+            color: variables.$white;
+
+            font-family: 'Red Hat Display';
+            font-weight: 900;
+            font-size: 15px;
+            letter-spacing: 0.002em;
+
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 20px 20px rgba(56, 41, 224, 0.2);
+            outline: none;
+
+            display: flex;
+            justify-content: center;
+
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+              transition: 0.3s;
+              opacity: 0.69;
+            }
+          }
+
+          & a {
+            color: variables.$desaturated-blue;
+            font-weight: 900;
+            font-size: 15px;
+            letter-spacing: 0.002em;
+
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+              transition: 0.3s;
+              color: variables.$dark-blue;
+            }
+
+            @media (min-width: 48rem) {
+              margin-left: -1px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 48rem) {
+    background: url(../images/pattern-background-desktop.svg) no-repeat top/100%, variables.$pale-blue;
+  }
+}

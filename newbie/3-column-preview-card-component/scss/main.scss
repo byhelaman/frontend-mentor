@@ -1,0 +1,128 @@
+@use './base/reset';
+@use './utilities/variables';
+
+
+.container {
+  background: #f2f2f2;
+  padding: 0 clamp(1.5rem, 6vw, 3rem);
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  & .wrap {
+    width: 100%;
+    max-width: 57.5rem;
+
+    margin: clamp(5.5rem, 15vw, calc(10.75rem - 1px)) 0 5.5rem;
+
+    & .cards {
+      width: 100%;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+
+      border-radius: 0.5rem;
+      overflow: hidden;
+
+      & .card {
+        padding: 3rem;
+
+        &__body {
+          color: variables.$tery-light-gray;
+          margin: calc(2rem + 3px) 0 clamp(calc(1.5rem + 1px), 6vw, calc(5.25rem - 1px));
+
+          & h1,
+          h2 {
+            margin: 0;
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            font-size: 2.5rem;
+          }
+
+          & p {
+            color: variables.$transparent-white;
+            margin: calc(1.5rem + 1px) 0 0;
+            font-size: calc(1rem - 1px);
+            line-height: calc(1.5rem + 1px);
+          }
+        }
+
+        &__button {
+          background: variables.$tery-light-gray;
+          width: calc(9rem + 2px);
+          height: 3rem;
+
+          display: flex;
+          justify-content: center;
+          // align-items: center;
+
+          padding-top: 0.75rem;
+
+          font-family: inherit;
+          font-size: calc(1rem - 1px);
+          letter-spacing: 0.005em;
+
+          border-radius: 100vw;
+          border: 0.125rem solid variables.$transparent-white;
+
+          cursor: pointer;
+
+          &:hover {
+            background: none;
+            color: variables.$transparent-white;
+          }
+        }
+      }
+
+      & .sedans {
+        background: variables.$bright-orange;
+
+        & button {
+          color: variables.$bright-orange;
+        }
+      }
+
+      & .suvs {
+        background: variables.$dark-cyan;
+
+        & p {
+          letter-spacing: 0.005em;
+        }
+
+        & button {
+          color: variables.$dark-cyan;
+        }
+      }
+
+      & .luxury {
+        background: variables.$very-dark-cyan;
+        border-radius: 0 0 0.5rem 0;
+
+        & button {
+          color: variables.$very-dark-cyan;
+        }
+
+        @media (min-width: calc(43.25rem - 1px)) {
+          grid-column: 1/4;
+        }
+
+        @media (min-width: 63rem) {
+          grid-column: 3/4;
+        }
+      }
+    }
+
+    @media (min-width: 91rem) {
+      margin: 0;
+    }
+
+  }
+
+  @media (min-width: 91rem) {
+    align-items: center;
+  }
+}
