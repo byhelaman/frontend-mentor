@@ -23,6 +23,7 @@ Users should be able to:
 ### Preview
 
 ![](./design/desktop-preview.jpg)
+\
 ↪ *This is a preview of the original challenge.*
 
 ### Links
